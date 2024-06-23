@@ -15,31 +15,45 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  /* justify-content: center; */
+  align-items: center; 
+  margin-top: 7rem;
+  
 }
 
 h1 {
 
-  font-size: 4rem;
-  margin-top: -0rem;
+ /* border: double red; */
+
+  font-size: 4rem;  
   font-weight: 300;
 
 }
 
 .big-text {
+
+  /* border: dotted red; */
+
   font-size: 6rem;
   line-height: 1;
-  margin: 0 2rem;
+  margin: 0 2rem;  
 }
 
 .countdown-el {
+
+ /* border: dotted green; */
+
   text-align: center;
+  margin: 0.5 rem;
 }
 
 .countdown-container {
+
+  /* border: dotted blue; */
+
   display: flex;
   flex-wrap: wrap;
   line-height: 1;
   margin: 1rem 2rem;
+  justify-content: center;
 }

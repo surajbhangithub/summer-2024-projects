@@ -1,57 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Quiz App</title>
 
-    <link rel="stylesheet" href="./style/02-quiz_app.css">
-    
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz App</title>
+
+  <link rel="stylesheet" href="./style/02-quiz_app.css">
+
 </head>
+
 <body>
 
-    <div class="quiz-container">
-      <div class="quiz-header">
+  <div class="quiz-container">
+    <div class="quiz-header">
 
-        <h2>Question Text</h2>
+      <h2 id="qtn">Question Text</h2>
 
-        <ul>
-          <li>
-            <input type="radio" id="a"
-            name="answer" />
-            <label for="a">Question</label>
-          </li>
-  
-          <li>
-            <input type="radio" id="b"
-            name="answer" />
-            <label for="b">Question</label>
-          </li>
-  
-          <li>
-            <input type="radio" id="c"
-            name="answer" />
-            <label for="c">Question</label>
-          </li>
-  
-          <li>
-            <input type="radio" id="d"
-            name="answer" />
-            <label for="d">Question</label>
-          </li>
-          
-        </ul>
+      <ul>
+        <li>
+          <input type="radio" id="a" name="answer" class="answer" />
+          <label id ='a_text' for="a">Question</label>
+        </li>
 
-      </div>
+        <li>
+          <input type="radio" id="b" name="answer" class="answer" />
+          <label id ='b_text' for="b">Question</label>
+        </li>
 
-      
+        <li>
+          <input type="radio" id="c" name="answer" class="answer" />
+          <label id ='c_text' for="c">Question</label>
+        </li>
 
-      <button>Submit</button>
+        <li>
+          <input type="radio" id="d" name="answer" class="answer" />
+          <label id ='d_text' for="d">Question</label>
+        </li>
 
+      </ul>
+
+    </div>
+
+    <button id="submit">Submit</button>
 
   </div>
-  
-    
-  <script src="./script/02-quiz_app.js"></script>  
+
+
+  <script src="./script/02-quiz_app.js"></script>
 
 </body>
+
 </html>

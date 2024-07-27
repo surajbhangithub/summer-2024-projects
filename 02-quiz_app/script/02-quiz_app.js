@@ -45,19 +45,26 @@ console.log(quizData);
 
 const qtnEl = document.getElementById('qtn');
 
-const a_text =document.getElementById('a_text');
-const b_text =document.getElementById('b_text');
-const c_text =document.getElementById('c_text');
-const d_text =document.getElementById('d_text');
+const answerEls = document.querySelectorAll('.answer');
+
+const quizEl = document.querySelector('.js-quiz');
+
+
+const a_text = document.getElementById('a_text');
+const b_text = document.getElementById('b_text');
+const c_text = document.getElementById('c_text');
+const d_text = document.getElementById('d_text');
 const submitBtn = document.getElementById('submit');
 
 let curruntQtn = 0;
 let score = 0;
 let answer = undefined;
 
-loadQuiz ();
+loadQuiz();
 
 function loadQuiz() {
+
+  deselectAnwer();
 
   const curruntQuizData = quizData[curruntQtn];
 
@@ -68,53 +75,72 @@ function loadQuiz() {
   c_text.innerText = curruntQuizData.c;
   d_text.innerText = curruntQuizData.d;
 
-  
+
 
 }
 
 submitBtn.addEventListener('click', () => {
 
-  curruntQtn++;
+    const answer = getSelected();
 
-  const answer = getSelected();
+  console.log(answer);
 
-  if(answer){
+  if (answer) {
 
-    if(curruntQtn < quizData.length){
+    if (answer === quizData[curruntQtn].correct) {
+
+      score++;
+
+      console.log(score);
+    }
+
+    curruntQtn++;
+
+    if (curruntQtn < quizData.length) {
+
       loadQuiz();
+
     } else {
-      // TODO : show result
-      alert('Done!')
-    } 
+
+      quizEl.innerHTML =
+       `
+      <h2>You have answerd correctly ${score}/${quizData.length} qustions.<h2>
+
+      <button onclick = "location.reload()">
+      Reload
+      </button>
+      `
+      ;
+    }
 
   }
 
-  /*
-
-  if(curruntQtn < quizData.length){
-    loadQuiz();
-  } else {
-    // TODO : show result
-    alert('Done!')
-  } 
-
-  */
-
 })
 
-function getSelected () {
+  function getSelected() {
 
-  console.log('Sur');
+    console.log('Sur');
 
-  const answerEls = document.querySelectorAll('.answer');
 
-  answerEls.forEach((answerEl) => {
+    let answer = undefined;
 
-    if(answerEl.checked) {
-      return answerEl.id;
-    }    
-  });
+    answerEls.forEach((answerEl) => {
 
-  return undefined;
+      if (answerEl.checked) {
+        answer = answerEl.id;
+      }
+    });
 
-}
+    return answer;
+
+  }
+
+  function deselectAnwer() {
+
+    answerEls.forEach((answerEl) => {
+
+      answerEl.checked = false;
+
+    })
+
+  }

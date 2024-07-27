@@ -36,6 +36,13 @@ body {
 
 }
 
+h2 {
+  
+  text-align: center;
+  margin: 1rem;
+  
+}
+
 .quiz-header {
   padding: 2em;
 }
@@ -56,7 +63,7 @@ ul li label {
 button {
   background-color: rgb(87, 156, 254);
   color: rgb(255, 255, 255);
-  display: block;
+  display: block;  
   font-family: inherit;
   font-size: 1.3rem;
   width: 100%;

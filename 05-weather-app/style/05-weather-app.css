@@ -8,3 +8,22 @@ body {
   font-family: "Roboto", sans-serif;
   margin: 0;
 }
+
+.weatherDetails {
+
+ 
+
+  border: dotted;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  justify-content: center;
+
+  /* width: 500px; */
+
+  
+  
+  
+
+}
